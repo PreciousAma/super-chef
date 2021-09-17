@@ -1,6 +1,23 @@
 .banner {
-    height: 50px;
-    color: white;
-    width: 50px;
+    /* height: 50px; */
     outline: 1px solid white;
+    margin-top: 150px;
+    margin-left: 30rem;
+    /* margin-right: 80px; */
+    width: 20%;
+}
+
+.banner .banner_text {
+    /* height: 50px; */
+    display: block;
+    color: white;
+    /* width: 50%; */
+    font-family: 'Dancing Script', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.banner::after {
+    content: "\01F525";
+    font-size: 50px;
 }

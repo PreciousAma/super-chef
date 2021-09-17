@@ -1,0 +1,39 @@
+.searchbox {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchbox .searchbox_text {
+    color: white;
+    font-family: 'Dancing Script', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    padding-right: 20px;
+}
+
+.searchbox .input {
+    padding: 5px;
+    width: 50%;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #3b3b3bB3;
+    font-weight: 600;
+}
+
+.searchbox .input::placeholder{
+    font-size: 18px;
+    font-weight: 600;
+    color: #636060;
+    opacity: 0.5;
+}
+
+.searchbox .input::-webkit-search-cancel-button,
+.searchbox .input::-ms-clear {
+    color: #636060;
+    opacity: 0.5;
+}

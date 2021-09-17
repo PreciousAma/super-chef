@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import '../styles/SearchBox.css';
 
 
 const SearchBox = () => {
@@ -11,8 +12,10 @@ const SearchBox = () => {
 
     return (
         <div className='searchbox'>
+            <p className='searchbox_text'>Discover Recipes</p>
             <input 
-                type='search' 
+                className='input'
+                type='search'  
                 placeholder='Search' 
                 value={searchValue}
                 onChange={handleSearchChange}
