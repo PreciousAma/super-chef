@@ -1,3 +1,12 @@
+/* * {
+  border: 1px solid red;
+} */
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -5,15 +14,33 @@
 }
 
 html {
-  min-height: 100%;
-  background-color: #000F26;
+  height: 100vh;
 }
 
 body {
+  background: url("./images/anshu-a-wi9Oi8Og7sc-unsplash\ \(1\).jpg") ;
+  background-size: cover;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  /* background-color: #000F26; */
+  position: relative;
+  height: 100%;
   font-family: 'Ubuntu', sans-serif;
-  color: #333;
+  /* color: #333; */
   font-size: 1rem;
   line-height: 1.5;
+}
+
+body::after {
+  position: absolute;
+  content: " ";
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
 }
 
 .container {

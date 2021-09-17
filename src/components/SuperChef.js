@@ -1,13 +1,15 @@
 import React from 'react';
 import SearchBox from './SearchBox';
 import Banner from './Banner';
+import RecipeCard from "./Recipe_card";
 
 const SuperChef = () => {
     return (
-        <div>
+        <>
             <SearchBox />
             <Banner />
-        </div>
+            <RecipeCard />
+        </>
     )
 }
 
