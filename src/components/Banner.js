@@ -3,8 +3,8 @@ import '../styles/Banner.css';
 
 const Banner = () => {
     return (
-        <div className='container'>
-            <h1 className='banner'>Banner</h1>
+        <div className='banner'>
+            <h1 className='banner_text'>Let's Try New Recipes !</h1>
         </div>
     )
 }
