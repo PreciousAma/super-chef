@@ -19,7 +19,7 @@ const RecipeCard = () => {
                         <img className="img"src={food} alt="recipe"/>
                     </div>
                     <div className="recipe_card__texts">
-                        <p className="texts">Mango Soup</p>
+                        <p className="texts">Mango SoupMMMMMmmmmmmmmmmmmmmmmmmm</p>
                     </div>
                 </div>
                 <div className="recipe_card">

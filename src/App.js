@@ -5,9 +5,7 @@ import SuperChef from './components/SuperChef';
 
 function App() {
   return (
-    <div className="App">
       <SuperChef />
-    </div>
   );
 }
 
