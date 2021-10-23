@@ -1,0 +1,118 @@
+.recipe_details {
+    width: 100%;
+    background-color: rgba(255, 228, 196, 0.2);
+}
+
+.details {
+    border-radius: 30px;
+}
+
+.details .img {
+   border-top-left-radius: 30px;
+   border-top-right-radius: 30px;
+   max-width: 100%;
+   height: auto;
+}
+
+.details .texts_details {
+   color: #181717;
+   padding-left: 18px; 
+}
+
+.texts_details .Meal_name {
+   font-size: 28px;
+   line-height: 1;
+   margin-bottom: 10px; 
+}
+
+.texts_details .Meal_type {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.texts_details .Meal_Category {
+    font-size: 18px;
+    /* color: #504f4f; */
+    background-color: #0a6b6b;
+    border-radius: 16px;
+    padding: 4px 20px;
+    color: #f5f5dc;
+    display: inline-block;
+    font-weight: 400;
+    margin-right: 10px;
+    margin-bottom: 8px;
+}
+
+.texts_details .Meal_tags {
+    background-color: #f86e3c;
+    border-radius: 16px;
+    padding: 4px 20px;
+    color: #f5f5dc;
+    display: inline-block;
+    font-size: 18px;
+    margin-left: 8px;
+    margin-bottom: 8px;
+}
+
+
+.texts_details .Meal_Area {
+    font-size: 22px;
+    font-style: italic;
+    color: #504f4f; 
+    margin-bottom: 10px;  
+}
+
+
+
+.details .Meal_ingredients {
+    font-size: 18px;
+    color: #272727;
+}
+
+.Meal_ingredients .subtitle {
+    font-size: 20px;
+    color: #141313;
+    margin-bottom: 10px;
+}
+
+.details .list {
+    list-style: none;
+}
+
+.details .instructions {
+    /* display: inline-block; */
+    margin-top: 15px;
+    max-width: 300px;
+    word-break: break-word;
+}
+
+.details .link {
+    display: inline-block;
+    align-items: center;
+    text-decoration: none;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid  #FF0000;
+    margin-top: 20px;
+    padding: 10px 15px;
+    color: #FF0000;
+    font-weight: 500px;
+    font-size: 20px;
+    /* justify-content: center; */
+}
+
+.link .button {
+    margin-right: 10px;
+    
+}
+
+.link .link_icon {
+    vertical-align: bottom;
+    font-size: 30px;
+    align-self: center;
+}
+
+
