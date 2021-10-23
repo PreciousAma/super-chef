@@ -112,6 +112,7 @@
         max-width: 100%;
     }
 
+
     .recipe_cards {
         flex-direction: row;
         justify-content: space-between;
@@ -122,6 +123,10 @@
         flex-basis: 48% ;
         min-height: 200px;
         
+    }
+
+    .recipe_cards .recipe_card:hover {
+        box-shadow: 50px, 20px, 20px bisque;
     }
 
     .recipe_cards:not(:last-child) {
