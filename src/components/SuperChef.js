@@ -5,7 +5,7 @@ import '../styles/SuperChef.css';
 import RecipeCard from './Recipe_card';
 import RecipeDetailsCard from './Recipe_Details_Card';
 
-const SuperChef = () => {
+const SuperChef = (text) => {
     const [searchValue, setSearchValue] = useState("");
 
     return (
@@ -13,7 +13,7 @@ const SuperChef = () => {
             <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
             {searchValue ? <RecipeCard /> : <Banner />}
     {/*<RecipeCard />*/}
-        <RecipeDetailsCard />
+        <RecipeDetailsCard text={text} />
         </main>
     )
 }

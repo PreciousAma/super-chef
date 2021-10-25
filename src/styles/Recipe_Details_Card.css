@@ -25,18 +25,18 @@
    margin-bottom: 10px; 
 }
 
-.texts_details .Meal_type {
+/* .texts_details .Meal_type {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
     margin-bottom: 10px;
-}
+} */
 
-.texts_details .Meal_Category {
+/* .texts_details .Meal_Category {
     font-size: 18px;
     /* color: #504f4f; */
-    background-color: #0a6b6b;
+    /* background-color: #0a6b6b; 
     border-radius: 16px;
     padding: 4px 20px;
     color: #f5f5dc;
@@ -55,7 +55,7 @@
     font-size: 18px;
     margin-left: 8px;
     margin-bottom: 8px;
-}
+} */
 
 
 .texts_details .Meal_Area {
@@ -82,9 +82,20 @@
     list-style: none;
 }
 
-.details .instructions {
-    /* display: inline-block; */
+.details .title {
+
+}
+
+.details .instruction_texts {
     margin-top: 15px;
+}
+
+.instruction_texts .instruction_title {
+    font-size: 20px;
+}
+
+.instruction_texts .instructions {
+    margin-top: 5px;
     max-width: 300px;
     word-break: break-word;
 }
