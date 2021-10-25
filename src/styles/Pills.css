@@ -1,0 +1,39 @@
+.texts_details .Meal_type {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 16px;
+    padding: 2px 20px;
+    border: 1px solid rgb(204, 7, 7);
+    background-color: #0a6b6b;
+    color: #080808;
+    text-transform: capitalize;
+    margin-right: 10px;
+    /* justify-content: flex-start; */
+     margin-bottom: 10px;
+}
+
+.texts_details .Meal_type.Meal_type-primary {
+    background-color:   rgba(10, 107, 107, 0.1);
+    border: 1px solid #0a6b6b; 
+    color:  #0a6b6b; 
+}
+
+.texts_details .Meal_type.Meal_type-secondary {
+    background-color: rgba(248, 110, 60, 0.2);
+    border: 1px solid #f86e3c; 
+    color:  #f86e3c; 
+
+}
+
+.texts_details .Meal_types {
+    display: flex;
+}
+
+.Meal_type .Meal_tag {
+    font-size: 18px;
+   /* color: #504f4f; */
+    display: inline;
+    font-weight: 400;
+    /* margin-bottom: 8px; */
+}
