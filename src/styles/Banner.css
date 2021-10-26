@@ -1,10 +1,9 @@
 .banner {
-    /* background-image: url("../images/anshu-a-wi9Oi8Og7sc-unsplash.jpg") ; */
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* background-color: rgba(0, 0, 0, 0.5); */
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     width: 100%;
     /* margin-top: */
@@ -21,10 +20,6 @@
     font-weight: 700;
 }
 
-/* .banner::after {
-    content: "\01F525";
-    font-size: 50px;
-} */
 
 @media only screen and (min-width: 600px) {
     .banner .banner_text {

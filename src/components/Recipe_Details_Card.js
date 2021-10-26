@@ -1,12 +1,9 @@
 import React from 'react';
 import food from "../images/breakfast.jpg";
 import '../styles/Recipe_Details_Card.css';
-import Pill from './Pill.js'
+import Pill from './Pill.js';
 
-
-
-
-const RecipeDetailsCard = ({text}) => { 
+const RecipeDetailsCard = () => { 
     return (
         <div className="recipe_details">
             <div className="details">
@@ -17,8 +14,13 @@ const RecipeDetailsCard = ({text}) => {
                     </h1>
                     <div className="Meal_types">
                         <Pill text="vegeterian" variant="secondary" />
-                        <Pill text="choke" variant="primary"/>
-                    </div>
+                        <Pill text="choke" variant="primary" />
+                        <Pill text="pasta" variant="primary" />
+                        <Pill text="curry" variant="secondary" />
+                        <Pill text="pasta" variant="primary" />
+                        <Pill text="pasta" variant="primary" />
+                        <Pill text="pasta" variant="primary" />
+                        </div>
                     {/*<div className="Meal_type">
                         <h2 className="Meal_Category">
                             vegetarian

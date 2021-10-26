@@ -21,7 +21,7 @@
 
 .texts_details .Meal_name {
    font-size: 28px;
-   line-height: 1;
+   line-height: 1.2;
    margin-bottom: 10px; 
 }
 
@@ -59,7 +59,7 @@
 
 
 .texts_details .Meal_Area {
-    font-size: 22px;
+    font-size: 20px;
     font-style: italic;
     color: #504f4f; 
     margin-bottom: 10px;  
@@ -86,7 +86,7 @@
 
 }
 
-.details .instruction_texts {
+.details .instructions_texts {
     margin-top: 15px;
 }
 
@@ -127,3 +127,24 @@
 }
 
 
+@media only screen and (min-width: 600px) {
+    .texts_details .Meal_Area {
+        font-size: 20px;
+    }
+
+    .Meal_ingredients .subtitle {
+        font-size: 24px;
+    }
+
+    .instruction_texts .instruction_title {
+        font-size: 24px;
+    }
+
+     .instruction_texts .instructions {
+        margin-top: 5px;
+        max-width: 100%;
+        word-break: break-word;
+        text-align: left;
+        padding-right: 10px;
+    }
+}    
