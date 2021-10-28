@@ -1,28 +1,32 @@
 import React, {useState} from 'react';
-import Drawer from 'rc-drawer';
 import SearchBox from './SearchBox';
 import Banner from './Banner';
 import '../styles/SuperChef.css';
 import RecipeCard from './Recipe_card';
+import Drawer from 'react-modern-drawer';
+import 'react-modern-drawer/dist/index.css';
 import RecipeDetailsCard from './Recipe_Details_Card';
 
 const SuperChef = () => {
     const [searchValue, setSearchValue] = useState("");
+    const [isOpen, setIsOpen] = React.useState(false);
+
+    const toggleDrawer = () => {
+    setIsOpen((prevState) => !prevState)    
+    }
 
     return ( 
         <main className={`main ${!searchValue ? "Home_Page_Background" : ""}`}>
             <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
-            {searchValue ? <RecipeCard /> : <Banner />}
+            {searchValue ? <RecipeCard toggleDrawer={toggleDrawer} /> : <Banner />}
             {/*<RecipeCard />*/}
             {/*<RecipeDetailsCard text={text} />*/}
-            
-            <Drawer 
-                open={true}
-                width="20vw"
-                placement="left"
+            <Drawer
+            open={isOpen}
+            direction='right'
+            onClose={toggleDrawer}
             >
-                {/* <RecipeDetailsCard  /> */}
-                <div>Drawer</div>
+                <RecipeDetailsCard />
             </Drawer>
         </main>
     )
