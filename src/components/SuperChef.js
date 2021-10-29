@@ -26,6 +26,7 @@ const SuperChef = () => {
             direction='right'
             onClose={toggleDrawer}
             >
+                <button onClick={toggleDrawer} className="toggle_button"> <i class="fas fa-times toggle_icon"></i>Close</button>
                 <RecipeDetailsCard />
             </Drawer>
         </main>

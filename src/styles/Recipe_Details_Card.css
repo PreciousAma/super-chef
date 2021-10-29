@@ -10,6 +10,24 @@
     width: 100% !important;
 }
 
+#EZDrawer .toggle_button {
+    z-index: 10;
+    position: absolute;
+    right: 0;
+    background-color: rgba(255, 255, 250, 0.8);
+    padding: 10px 20px;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    border: none;
+    cursor: pointer;    
+}
+
+#EZDrawer .toggle_icon {
+    padding-right: 5px;
+}
+
+
+
 .recipe_detail::-webkit-scrollbar-button{
     width: 20px;
     height: 30px;
