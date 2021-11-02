@@ -6,7 +6,7 @@ const RecipeCard = ({ toggleDrawer }) => {
         return (
             <section className="container">
                 <div className="recipe_cards" >
-                    <div className="recipe_card color-overlay" onClick={toggleDrawer}>
+                    <div className="recipe_card" onClick={toggleDrawer}>
                         <div className="recipe_card__image">
                             <img className="img" src={food} alt="recipe"/>
                         </div>

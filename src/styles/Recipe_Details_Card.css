@@ -28,9 +28,20 @@
 
 
 
-.recipe_detail::-webkit-scrollbar-button{
-    width: 20px;
-    height: 30px;
+.recipe_details::-webkit-scrollbar {
+    width: 10px;
+}
+
+.recipe_details::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+.recipe_details::-webkit-scrollbar-thumb {
+    background: #c8f7f7;
+}
+
+.recipe_details::-webkit-scrollbar-thumb:hover {
+    background: #a6f7f7;
 }
 
 .details {
@@ -181,12 +192,12 @@
 
 @media only screen and (min-width: 1024px) {
     #EZDrawer > nav {
-        width: 400px !important;
+        width: 350px !important;
     }    
 }
 
 @media only screen and (min-width: 1280px) {
     #EZDrawer > nav {
-        width: 500px !important;
+        width: 400px !important;
     }  
 }
