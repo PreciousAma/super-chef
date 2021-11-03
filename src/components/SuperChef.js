@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import SearchBox from './SearchBox';
 import Banner from './Banner';
 import '../styles/SuperChef.css';
-import RecipeCard from './Recipe_card';
+import RecipeCards from './Recipe_cards';
 import Drawer from 'react-modern-drawer';
 import 'react-modern-drawer/dist/index.css';
 import RecipeDetailsCard from './Recipe_Details_Card';
@@ -18,7 +18,7 @@ const SuperChef = () => {
     return ( 
         <main className={`main ${!searchValue ? "Home_Page_Background" : ""}`}>
             <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
-            {searchValue ? <RecipeCard toggleDrawer={toggleDrawer} /> : <Banner />}
+            {searchValue ? <RecipeCards toggleDrawer={toggleDrawer} /> : <Banner />}
             {/*<RecipeCard />*/}
             {/*<RecipeDetailsCard text={text} />*/}
             <Drawer
