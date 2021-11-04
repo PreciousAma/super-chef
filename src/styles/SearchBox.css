@@ -112,10 +112,10 @@
         font-weight: 600;
     }
     
-    .searchbox .input::-webkit-search-cancel-button,
+    /* .searchbox .input::-webkit-search-cancel-button,
     .searchbox .input::-ms-clear {
 
-    }
+    } */
     
 }
 

@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/SearchBox.css';
 
 
-const SearchBox = ({searchValue, setSearchValue}) => {
+const SearchBox = ({searchValue, setSearchValue, getRecipes}) => {
+    const [value, setValue] = useState('');
+    
     const handleSearchChange = (event) => {
-        setSearchValue(event.target.value)
+        if (event.key === 'Enter') { 
+            setSearchValue(value);
+            getRecipes();
+        }
     }
+
+    const handleChange = (event) => {
+        setValue(event.target.value);
+    }
+    
 
     return (
         <section className="header container">
@@ -15,12 +25,12 @@ const SearchBox = ({searchValue, setSearchValue}) => {
                 type="search" 
                 className={`input ${searchValue ? "input2" : ""}`}
                 placeholder="Search" 
-                value={searchValue}
-                onChange={handleSearchChange}
+                value={value}
+                onChange={handleChange}
+                onKeyPress={handleSearchChange}
             />
             </div>
         </section>
-        
     ) 
 }
 
