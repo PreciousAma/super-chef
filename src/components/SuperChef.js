@@ -11,7 +11,7 @@ import RecipeDetailsCard from './Recipe_Details_Card';
 const SuperChef = () => {
     const [searchValue, setSearchValue] = useState("");
     const [isOpen, setIsOpen] = React.useState(false);
-    const [recipes, setRecipes] = useState();
+    const [recipes, setRecipes] = useState([]);
 
     const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState)    
@@ -21,8 +21,7 @@ const SuperChef = () => {
     const getRecipes = async () => {
         try {
           const { data } = await Api.get(`/search.php?s=${searchValue}`);
-            setRecipes(data.meals);  
-            console.log(data.meals);
+          setRecipes(data.meals);  // set the state to the data from the API
         } catch (error) {
           const errorMessage = error.isAxiosError ? error.response.data.status_message : error.message;
           console.error({ errorMessage });
@@ -32,10 +31,9 @@ const SuperChef = () => {
 
     return ( 
         <main className={`main ${!searchValue ? "Home_Page_Background" : ""}`}>
-            <SearchBox searchValue={searchValue} setSearchValue={setSearchValue}  getRecipes={getRecipes}/>
-            {searchValue ? <RecipeCards toggleDrawer={toggleDrawer} /> : <Banner />}
-            {/*<RecipeCard />*/}
-            {/*<RecipeDetailsCard text={text} />*/}
+            <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} getRecipes={getRecipes}/>
+            {searchValue ? <RecipeCards toggleDrawer={toggleDrawer} recipes={recipes} /> : <Banner />}
+
             <Drawer
             open={isOpen}
             direction='right'

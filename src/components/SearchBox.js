@@ -3,17 +3,17 @@ import '../styles/SearchBox.css';
 
 
 const SearchBox = ({searchValue, setSearchValue, getRecipes}) => {
-    const [value, setValue] = useState('');
+    const [inputValue, setInputValue] = useState('');
     
     const handleSearchChange = (event) => {
         if (event.key === 'Enter') { 
-            setSearchValue(value);
+            setSearchValue(inputValue);
             getRecipes();
         }
     }
 
     const handleChange = (event) => {
-        setValue(event.target.value);
+        setInputValue(event.target.value);
     }
     
 
@@ -25,7 +25,7 @@ const SearchBox = ({searchValue, setSearchValue, getRecipes}) => {
                 type="search" 
                 className={`input ${searchValue ? "input2" : ""}`}
                 placeholder="Search" 
-                value={value}
+                value={inputValue}
                 onChange={handleChange}
                 onKeyPress={handleSearchChange}
             />
