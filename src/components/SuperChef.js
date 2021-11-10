@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Api } from '../utils/Api';
 import SearchBox from './SearchBox';
 import Banner from './Banner';
+import capitalizeFirstLetter from './../helpers/Capitalize'
 import '../styles/SuperChef.css';
 import RecipeCards from './Recipe_cards';
 import Drawer from 'react-modern-drawer';
@@ -20,8 +21,10 @@ const SuperChef = () => {
 
     const getRecipes = async () => {
         try {
+          const newSearchValue  = capitalizeFirstLetter(searchValue);
+          console.log({newSearchValue});
           const { data } = await Api.get(`/search.php?s=${searchValue}`);
-          setRecipes(data.meals);  // set the state to the data from the API
+            setRecipes(data.meals);  // set the state to the data from the API
         } catch (error) {
           const errorMessage = error.isAxiosError ? error.response.data.status_message : error.message;
           console.error({ errorMessage });
