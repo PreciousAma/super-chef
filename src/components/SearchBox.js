@@ -7,8 +7,10 @@ const SearchBox = ({searchValue, setSearchValue, getRecipes}) => {
     
     const handleSearchChange = (event) => {
         if (event.key === 'Enter') { 
-            setSearchValue(inputValue);
-            getRecipes();
+            setSearchValue((currentState) => { 
+                getRecipes(inputValue);
+                return inputValue
+            });
         }
     }
 

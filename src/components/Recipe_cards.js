@@ -9,7 +9,7 @@ const RecipeCards = ({ toggleDrawer, recipes }) => {
         return (
             <section className="container">
             <div className="recipe_cards" >
-                {recipes.map((recipe) => {
+                {recipes?.map((recipe) => {
                     return <RecipeCard toggleDrawer={toggleDrawer} name={recipe.strMeal} key={recipe.idMeal} image={recipe.strMealThumb} /> 
                 })}
             </div>

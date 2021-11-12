@@ -19,17 +19,15 @@ const SuperChef = () => {
     }
 
 
-    const getRecipes = async () => {
-        try {
-          const newSearchValue  = capitalizeFirstLetter(searchValue);
-          console.log({newSearchValue});
-          const { data } = await Api.get(`/search.php?s=${searchValue}`);
-            setRecipes(data.meals);  // set the state to the data from the API
-        } catch (error) {
-          const errorMessage = error.isAxiosError ? error.response.data.status_message : error.message;
-          console.error({ errorMessage });
-        }
+    const getRecipes = async (value) => {
+      try {
+        const { data } = await Api.get(`/search.php?s=${value}`);
+          setRecipes(data.meals ?? []);  // set the state to the data from the API
+      } catch (error) {
+        const errorMessage = error.isAxiosError ? error.response.data.status_message : error.message;
+        console.error({ errorMessage });
       }
+    }
 
 
     return ( 
