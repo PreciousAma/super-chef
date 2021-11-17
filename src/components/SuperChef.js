@@ -11,8 +11,9 @@ import RecipeDetailsCard from './Recipe_Details_Card';
 
 const SuperChef = () => {
     const [searchValue, setSearchValue] = useState("");
-    const [isOpen, setIsOpen] = React.useState(false);
+    const [isOpen, setIsOpen] = useState(false);
     const [recipes, setRecipes] = useState([]);
+    const [recipeId, setRecipeId] = useState(null);
 
     const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState)    
@@ -33,7 +34,7 @@ const SuperChef = () => {
     return ( 
         <main className={`main ${!searchValue ? "Home_Page_Background" : ""}`}>
             <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} getRecipes={getRecipes}/>
-            {searchValue ? <RecipeCards toggleDrawer={toggleDrawer} recipes={recipes} /> : <Banner />}
+            {searchValue ? <RecipeCards toggleDrawer={toggleDrawer} recipes={recipes} setRecipeId={setRecipeId} /> : <Banner />}
 
             <Drawer
             open={isOpen}
@@ -41,7 +42,7 @@ const SuperChef = () => {
             onClose={toggleDrawer}
             >
                 <button onClick={toggleDrawer} className="toggle_button"> <i className="fas fa-times toggle_icon"></i>Close</button>
-                <RecipeDetailsCard />
+                <RecipeDetailsCard recipeId={recipeId} />
             </Drawer>
         </main>
     )

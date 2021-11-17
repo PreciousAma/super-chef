@@ -1,16 +1,41 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import { Api } from '../utils/Api';
 import food from "../images/breakfast.jpg";
 import '../styles/Recipe_Details_Card.css';
 import Pill from './Pill.js';
 
-const RecipeDetailsCard = () => { 
+const RecipeDetailsCard = ({ recipeId }) => { 
+        console.log(recipeId);
+    const[recipeDetails, setRecipeDetails] = useState({});
+
+        // console.log ({recipeDetails});
+
+        useEffect(() => {
+            getRecipeDetails();
+
+            return () => {
+                setRecipeDetails({});
+            }
+        }, [recipeId]);
+
+
+    const getRecipeDetails = async () => {
+        try {
+          const { data } = await Api.get(`/lookup.php?i=${recipeId}`);
+          setRecipeDetails(data.meals ? data.meals[0] : {});  // set the state to the data from the API
+        } catch (error) {
+          const errorMessage = error.isAxiosError ? error.response.data.status_message : error.message;
+          console.error({ errorMessage });
+        }
+      }
+
     return (
         <div className="recipe_details">
             <div className="details">
-                <img className="img" src={food} alt="recipe"/>
+                <img className="img" src={recipeDetails.strMealThumb} alt="recipe"/>
                 <div className="texts_details container">
                     <h1 className="Meal_name" >
-                        Carrot bread with caramelized spiced banana
+                       {recipeDetails.strMeal}
                     </h1>
                     <div className="Meal_types">
                         <Pill text="vegeterian" variant="secondary" />
@@ -53,10 +78,10 @@ const RecipeDetailsCard = () => {
                     <div className="instruction_texts">
                         <h3 className="instruction_title">Instructions</h3>
                         <p className="instructions">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            {recipeDetails.strInstructions}
                         </p>   
                     </div>                                             
-                    <a href="#" className="link">
+                    <a href={recipeDetails.strYoutube} className="link">
                         <span className="button">Watch Recipe Video</span>
                         <i className="fab fa-youtube icon link_icon"></i>
                     </a>                
