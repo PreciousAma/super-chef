@@ -15,10 +15,14 @@ const SuperChef = () => {
     const [recipes, setRecipes] = useState([]);
     const [recipeId, setRecipeId] = useState(null);
 
-    const toggleDrawer = () => {
-    setIsOpen((prevState) => !prevState)    
-    }
+    const openDrawer = () => {
+      setIsOpen(true);
+     }
 
+    const closeDrawer = () => {
+      setIsOpen(false);
+      setRecipeId(null);
+    }
 
     const getRecipes = async (value) => {
       try {
@@ -34,14 +38,14 @@ const SuperChef = () => {
     return ( 
         <main className={`main ${!searchValue ? "Home_Page_Background" : ""}`}>
             <SearchBox searchValue={searchValue} setSearchValue={setSearchValue} getRecipes={getRecipes}/>
-            {searchValue ? <RecipeCards toggleDrawer={toggleDrawer} recipes={recipes} setRecipeId={setRecipeId} /> : <Banner />}
+            {searchValue ? <RecipeCards openDrawer={openDrawer} recipes={recipes} setRecipeId={setRecipeId} /> : <Banner />}
 
             <Drawer
-            open={isOpen}
-            direction='right'
-            onClose={toggleDrawer}
+              open={isOpen}
+              direction='right'
+              onClose={closeDrawer}
             >
-                <button onClick={toggleDrawer} className="toggle_button"> <i className="fas fa-times toggle_icon"></i>Close</button>
+                <button onClick={closeDrawer} className="toggle_button"> <i className="fas fa-times toggle_icon" />Close</button>
                 <RecipeDetailsCard recipeId={recipeId} />
             </Drawer>
         </main>

@@ -5,19 +5,29 @@ import '../styles/Recipe_Details_Card.css';
 import Pill from './Pill.js';
 
 const RecipeDetailsCard = ({ recipeId }) => { 
-        console.log(recipeId);
-    const[recipeDetails, setRecipeDetails] = useState({});
+    const [recipeDetails, setRecipeDetails] = useState({});
 
-        // console.log ({recipeDetails});
+    useEffect(() => {
+        getRecipeDetails();
 
-        useEffect(() => {
-            getRecipeDetails();
+        return () => {
+            setRecipeDetails({});
+        }
+    }, [recipeId]);
 
-            return () => {
-                setRecipeDetails({});
-            }
-        }, [recipeId]);
+    // [{ indgredient: 'honey', measure: '1/2 cup'}, { indgredient: 'honey', measure: '1/2 cup'}];
 
+    const recipeArray = Object.entries(recipeDetails)
+        .filter((detail) => {
+            return (detail[0].startsWith('strIngredient') && !!detail[1]) || (detail[0].startsWith('strMeasure') && !!detail[1]) 
+        });
+
+    const mealIngredients = [];
+
+    recipeArray.forEach(([key, value]) => {
+        const arrayIndex = key.slice(-1);
+        mealIngredients[arrayIndex] = {  ...mealIngredients[arrayIndex], [key]: value };
+    });
 
     const getRecipeDetails = async () => {
         try {
@@ -38,33 +48,12 @@ const RecipeDetailsCard = ({ recipeId }) => {
                        {recipeDetails.strMeal}
                     </h1>
                     <div className="Meal_types">
-                        <Pill text="vegeterian" variant="secondary" />
-                        <Pill text="choke" variant="primary" />
-                        <Pill text="pasta" variant="primary" />
-                        <Pill text="curry" variant="secondary" />
-                        <Pill text="pasta" variant="primary" />
-                        <Pill text="pasta" variant="primary" />
-                        <Pill text="pasta" variant="primary" />
-                        </div>
-                    {/*<div className="Meal_type">
-                        <h2 className="Meal_Category">
-                            vegetarian
-                        </h2>
-                        <p className="Meal_tags">
-                            pasta
-                        </p>
-                        <p className="Meal_tags">
-                            curry
-                        </p>
-                        <p className="Meal_tags">
-                            pasta
-                        </p>
-                        <p className="Meal_tags">
-                            pasta
-                        </p>
-    </div>*/}
+                        <Pill text= {recipeDetails.strCategory} variant="secondary" />
+                        {recipeDetails.strTags?.split(",").map((tag) => { return <Pill text={tag} key={tag} variant="primary" /> })}
+                    </div>
+
                     <h2 className="Meal_Area">
-                        Italian
+                        {recipeDetails.strArea}
                     </h2>
                     <div className="Meal_ingredients">
                         <h3 className="subtitle">Ingredients</h3>

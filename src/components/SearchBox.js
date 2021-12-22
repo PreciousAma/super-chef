@@ -17,7 +17,6 @@ const SearchBox = ({searchValue, setSearchValue, getRecipes}) => {
     const handleChange = (event) => {
         setInputValue(event.target.value);
     }
-    
 
     return (
         <section className="header container">

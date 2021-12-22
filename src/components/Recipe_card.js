@@ -1,11 +1,11 @@
 import React from 'react';
 import food from "../images/breakfast.jpg";
 
-const RecipeCard = ({ toggleDrawer, name, image, setRecipeId, recipeId }) => {
+const RecipeCard = ({ openDrawer, name, image, setRecipeId, recipeId }) => {
 
     const handleClick = () => {
         setRecipeId(recipeId);
-        toggleDrawer();
+        openDrawer();
     }
 
     return (
