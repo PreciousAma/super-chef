@@ -1,6 +1,6 @@
 .texts_details .Meal_type {
-    display: flex;
-    flex-wrap: wrap;
+    display: flex; 
+    /* flex-wrap: wrap; */
     align-items: center;
     border-radius: 16px;
     padding: 2px 20px;
@@ -8,9 +8,15 @@
     background-color: #0a6b6b;
     color: #080808;
     text-transform: capitalize;
-    margin-right: 10px;
+    margin-top: 10px;
+    margin-right: 15px;
     /* justify-content: flex-start; */
      margin-bottom: 10px;
+}
+
+.texts_details .Meal_types {
+    flex-wrap: wrap;
+    /* outline: 1px solid red; */
 }
 
 .texts_details .Meal_type.Meal_type-primary {
@@ -37,3 +43,4 @@
     font-weight: 400;
     /* margin-bottom: 8px; */
 }
+

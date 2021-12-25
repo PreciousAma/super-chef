@@ -1,6 +1,53 @@
 .recipe_details {
     width: 100%;
     background-color: rgba(255, 228, 196, 0.2);
+    /* overflow-x: hidden; */
+    overflow-y: auto;
+    height: 100%;   
+}
+
+#EZDrawer > nav {
+    width: 100% !important;
+}
+
+#EZDrawer .toggle_button {
+    z-index: 10;
+    position: absolute;
+    right: 0;
+    background-color: rgba(255, 255, 250, 0.8);
+    padding: 10px 20px;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    border: none;
+    cursor: pointer;    
+}
+
+#EZDrawer .toggle_icon {
+    padding-right: 5px;
+}
+
+
+
+.recipe_details::-webkit-scrollbar {
+    width: 10px;
+}
+
+.recipe_details::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+.recipe_details::-webkit-scrollbar-thumb {
+    background: #c8f7f7;
+}
+
+.recipe_details::-webkit-scrollbar-thumb:hover {
+    background: #a6f7f7;
+}
+
+.recipe_details .precious {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .details {
@@ -8,8 +55,8 @@
 }
 
 .details .img {
-   border-top-left-radius: 30px;
-   border-top-right-radius: 30px;
+   /* border-top-left-radius: 30px;
+   border-top-right-radius: 30px; */
    max-width: 100%;
    height: auto;
 }
@@ -21,7 +68,7 @@
 
 .texts_details .Meal_name {
    font-size: 28px;
-   line-height: 1;
+   line-height: 1.2;
    margin-bottom: 10px; 
 }
 
@@ -59,7 +106,7 @@
 
 
 .texts_details .Meal_Area {
-    font-size: 22px;
+    font-size: 20px;
     font-style: italic;
     color: #504f4f; 
     margin-bottom: 10px;  
@@ -86,7 +133,7 @@
 
 }
 
-.details .instruction_texts {
+.details .instructions_texts {
     margin-top: 15px;
 }
 
@@ -127,3 +174,36 @@
 }
 
 
+@media only screen and (min-width: 600px) {
+    .texts_details .Meal_Area {
+        font-size: 20px;
+    }
+
+    .Meal_ingredients .subtitle {
+        font-size: 24px;
+    }
+
+    .instruction_texts .instruction_title {
+        font-size: 24px;
+    }
+
+     .instruction_texts .instructions {
+        margin-top: 5px;
+        max-width: 100%;
+        word-break: break-word;
+        text-align: left;
+        padding-right: 10px;
+    }
+} 
+
+@media only screen and (min-width: 1024px) {
+    #EZDrawer > nav {
+        width: 35% !important;
+    }    
+}
+
+/* @media only screen and (min-width: 1280px) {
+    #EZDrawer > nav {
+        width: 50% !important;
+    }  
+} */
