@@ -1,6 +1,53 @@
 .banner {
-    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    width: 50px;
-    outline: 1px solid white;
+    width: 100%;
+    /* margin-top: */
+}
+
+.banner .banner_text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    /* width: 50%; */
+    font-family: 'Dancing Script', sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+}
+
+
+@media only screen and (min-width: 600px) {
+    .banner .banner_text {
+        font-size: 40px;
+    }
+    
+}
+
+@media only screen and (min-width: 768px) {
+    .banner .banner_text {
+        font-size: 50px;
+    } 
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .banner {
+        margin-bottom: 30px;
+    }
+
+    .banner .banner_text {
+        font-size: 55px;
+    }
+    
+}
+
+@media only screen and (min-width: 1280px) {
+    .banner .banner_text {
+        font-size: 60px;
+    }
 }

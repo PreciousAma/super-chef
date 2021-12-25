@@ -1,3 +1,14 @@
+/* * {
+  border: 1px solid red;
+} */
+
+#root {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -5,20 +16,20 @@
 }
 
 html {
-  min-height: 100%;
-  background-color: #000F26;
+  height: 100vh;
 }
 
 body {
   font-family: 'Ubuntu', sans-serif;
-  color: #333;
   font-size: 1rem;
   line-height: 1.5;
+  height: 100%;
 }
+
 
 .container {
   padding: 24px 0px;
-  max-width: 90%;
+  max-width: 1440px;
   margin-left: auto;
   margin-right: auto;
 }

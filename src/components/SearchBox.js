@@ -1,24 +1,37 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+import '../styles/SearchBox.css';
 
 
-const SearchBox = () => {
+const SearchBox = ({searchValue, setSearchValue, getRecipes}) => {
+    const [inputValue, setInputValue] = useState('');
     
-    const [searchValue, setSearchValue] = useState("");
+    const handleSearchChange = (event) => {
+        if (event.key === 'Enter') { 
+            setSearchValue((currentState) => { 
+                getRecipes(inputValue);
+                return inputValue
+            });
+        }
+    }
 
-   const handleSearchChange = (event) => {
-        setSearchValue(event.target.value)
+    const handleChange = (event) => {
+        setInputValue(event.target.value);
     }
 
     return (
-        <div className='searchbox'>
+        <section className="header container">
+            <div className="searchbox">
+            <p className={`searchbox_text ${searchValue ? "searchbox_text2" : ""}`}>Discover Recipes</p>
             <input 
-                type='search' 
-                placeholder='Search' 
-                value={searchValue}
-                onChange={handleSearchChange}
+                type="search" 
+                className={`input ${searchValue ? "input2" : ""}`}
+                placeholder="Search" 
+                value={inputValue}
+                onChange={handleChange}
+                onKeyPress={handleSearchChange}
             />
-        </div>
-        
+            </div>
+        </section>
     ) 
 }
 

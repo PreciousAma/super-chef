@@ -1,0 +1,209 @@
+.recipe_details {
+    width: 100%;
+    background-color: rgba(255, 228, 196, 0.2);
+    /* overflow-x: hidden; */
+    overflow-y: auto;
+    height: 100%;   
+}
+
+#EZDrawer > nav {
+    width: 100% !important;
+}
+
+#EZDrawer .toggle_button {
+    z-index: 10;
+    position: absolute;
+    right: 0;
+    background-color: rgba(255, 255, 250, 0.8);
+    padding: 10px 20px;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    border: none;
+    cursor: pointer;    
+}
+
+#EZDrawer .toggle_icon {
+    padding-right: 5px;
+}
+
+
+
+.recipe_details::-webkit-scrollbar {
+    width: 10px;
+}
+
+.recipe_details::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+.recipe_details::-webkit-scrollbar-thumb {
+    background: #c8f7f7;
+}
+
+.recipe_details::-webkit-scrollbar-thumb:hover {
+    background: #a6f7f7;
+}
+
+.recipe_details .precious {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.details {
+    border-radius: 30px;
+}
+
+.details .img {
+   /* border-top-left-radius: 30px;
+   border-top-right-radius: 30px; */
+   max-width: 100%;
+   height: auto;
+}
+
+.details .texts_details {
+   color: #181717;
+   padding-left: 18px; 
+}
+
+.texts_details .Meal_name {
+   font-size: 28px;
+   line-height: 1.2;
+   margin-bottom: 10px; 
+}
+
+/* .texts_details .Meal_type {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+} */
+
+/* .texts_details .Meal_Category {
+    font-size: 18px;
+    /* color: #504f4f; */
+    /* background-color: #0a6b6b; 
+    border-radius: 16px;
+    padding: 4px 20px;
+    color: #f5f5dc;
+    display: inline-block;
+    font-weight: 400;
+    margin-right: 10px;
+    margin-bottom: 8px;
+}
+
+.texts_details .Meal_tags {
+    background-color: #f86e3c;
+    border-radius: 16px;
+    padding: 4px 20px;
+    color: #f5f5dc;
+    display: inline-block;
+    font-size: 18px;
+    margin-left: 8px;
+    margin-bottom: 8px;
+} */
+
+
+.texts_details .Meal_Area {
+    font-size: 20px;
+    font-style: italic;
+    color: #504f4f; 
+    margin-bottom: 10px;  
+}
+
+
+
+.details .Meal_ingredients {
+    font-size: 18px;
+    color: #272727;
+}
+
+.Meal_ingredients .subtitle {
+    font-size: 20px;
+    color: #141313;
+    margin-bottom: 10px;
+}
+
+.details .list {
+    list-style: none;
+}
+
+.details .title {
+
+}
+
+.details .instructions_texts {
+    margin-top: 15px;
+}
+
+.instruction_texts .instruction_title {
+    font-size: 20px;
+}
+
+.instruction_texts .instructions {
+    margin-top: 5px;
+    max-width: 300px;
+    word-break: break-word;
+}
+
+.details .link {
+    display: inline-block;
+    align-items: center;
+    text-decoration: none;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid  #FF0000;
+    margin-top: 20px;
+    padding: 10px 15px;
+    color: #FF0000;
+    font-weight: 500px;
+    font-size: 20px;
+    /* justify-content: center; */
+}
+
+.link .button {
+    margin-right: 10px;
+    
+}
+
+.link .link_icon {
+    vertical-align: bottom;
+    font-size: 30px;
+    align-self: center;
+}
+
+
+@media only screen and (min-width: 600px) {
+    .texts_details .Meal_Area {
+        font-size: 20px;
+    }
+
+    .Meal_ingredients .subtitle {
+        font-size: 24px;
+    }
+
+    .instruction_texts .instruction_title {
+        font-size: 24px;
+    }
+
+     .instruction_texts .instructions {
+        margin-top: 5px;
+        max-width: 100%;
+        word-break: break-word;
+        text-align: left;
+        padding-right: 10px;
+    }
+} 
+
+@media only screen and (min-width: 1024px) {
+    #EZDrawer > nav {
+        width: 35% !important;
+    }    
+}
+
+/* @media only screen and (min-width: 1280px) {
+    #EZDrawer > nav {
+        width: 50% !important;
+    }  
+} */

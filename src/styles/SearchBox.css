@@ -1,0 +1,124 @@
+.searchbox {
+    /* padding: 10px; */
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* max-width: 414px; */
+}
+
+.searchbox .searchbox_text {
+    /* display:flex; */
+    color: white;
+    font-family: 'Dancing Script', sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: left;
+    /* justify-content: flex-start; */
+}
+
+.searchbox .searchbox_text2 {
+    color: rgb(22, 20, 20);
+    font-family: 'Dancing Script', sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+    text-align: left;   
+}
+
+.searchbox .input {
+    margin-top: 20px;
+    padding: 10px 10px 10px 20px;
+    width: 100%;
+    /* height: 30px; */
+    outline: none;
+    align-self: center;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    color: #3b3b3bB3;
+    font-weight: 400;
+}
+
+.searchbox .input2 {
+    border: 1px solid rgb(29, 28, 28);
+}
+
+
+
+.searchbox .input::placeholder{
+    /* padding: 4px 4px 4px 10px; */
+    font-size: 18px;
+    font-weight: 400;
+    color: #636060B3;
+    /* opacity: 0.5; */
+}
+
+.searchbox .input::-webkit-search-cancel-button,
+.searchbox .input::-ms-clear {
+    color: #636060B3;
+    /* opacity: 0.5; */
+}
+
+@media only screen and (min-width: 600px) {
+    .searchbox {
+        /* padding: 20px;   */
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .searchbox {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .searchbox .searchbox_text {
+        padding-right: 20px;
+    }
+
+    .searchbox .input {
+        width: 70%;
+        /* padding: 5px; */
+    }
+}
+
+
+@media only screen and (min-width: 1024px) {
+    .searchbox {
+        /* padding: 30px; */
+        /* align-items: center;
+        justify-content: center; */
+    }
+    
+    .searchbox .searchbox_text {
+        font-size: 40px;
+        font-weight: 400;
+        padding-right: 20px;
+    }
+    
+    .searchbox .input {
+        margin-top: 0;
+        width: 50%;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        height: 40px;
+        /* border-radius: 10px; */
+        font-size: 18px;
+        font-weight: 400;
+    }
+    
+    .searchbox .input::placeholder{
+        font-size: 18px;
+        font-weight: 600;
+    }
+    
+    /* .searchbox .input::-webkit-search-cancel-button,
+    .searchbox .input::-ms-clear {
+
+    } */
+    
+}
+
+@media only screen and (min-width: 1280px) {
+    
+}
