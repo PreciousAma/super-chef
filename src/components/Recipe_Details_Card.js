@@ -15,19 +15,28 @@ const RecipeDetailsCard = ({ recipeId }) => {
         }
     }, [recipeId]);
 
-    // [{ indgredient: 'honey', measure: '1/2 cup'}, { indgredient: 'honey', measure: '1/2 cup'}];
-
     const recipeArray = Object.entries(recipeDetails)
         .filter((detail) => {
             return (detail[0].startsWith('strIngredient') && !!detail[1]) || (detail[0].startsWith('strMeasure') && !!detail[1]) 
         });
 
     const mealIngredients = [];
-
+    
     recipeArray.forEach(([key, value]) => {
-        const arrayIndex = key.slice(-1);
-        mealIngredients[arrayIndex] = {  ...mealIngredients[arrayIndex], [key]: value };
+        let arrayIndex;
+        const keyLength = key.length;
+
+        if (key.startsWith('strIngredient')) {
+            arrayIndex = key.slice(13 - keyLength);
+        } else {
+            arrayIndex = key.slice(10 - keyLength);
+        }
+
+        mealIngredients[arrayIndex - 1] = {  ...mealIngredients[arrayIndex - 1], [key]: value };
     });
+
+    console.log({ mealIngredients });
+
 
     const getRecipeDetails = async () => {
         try {
@@ -39,10 +48,13 @@ const RecipeDetailsCard = ({ recipeId }) => {
         }
       }
 
+
     return (
         <div className="recipe_details">
             <div className="details">
-                <img className="img" src={recipeDetails.strMealThumb} alt="recipe"/>
+                <div className="precious">
+                    <img className="img" src={recipeDetails.strMealThumb} alt="recipe"/>
+                </div>
                 <div className="texts_details container">
                     <h1 className="Meal_name" >
                        {recipeDetails.strMeal}
@@ -58,10 +70,7 @@ const RecipeDetailsCard = ({ recipeId }) => {
                     <div className="Meal_ingredients">
                         <h3 className="subtitle">Ingredients</h3>
                         <ul className="list">
-                            <li>honey 1/2 cup </li>                
-                            <li>honey 1pc </li>                  
-                            <li>honey 2tbsp</li>                  
-                            <li>honey </li>                  
+                            {mealIngredients.map((ingredient, index) => <li key={index}>{ingredient[`strIngredient${index + 1}`]} --- {ingredient[`strMeasure${index + 1}`]}</li> )}                 
                         </ul>   
                     </div>
                     <div className="instruction_texts">

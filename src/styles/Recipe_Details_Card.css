@@ -44,6 +44,12 @@
     background: #a6f7f7;
 }
 
+.recipe_details .precious {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 .details {
     border-radius: 30px;
 }
@@ -192,12 +198,12 @@
 
 @media only screen and (min-width: 1024px) {
     #EZDrawer > nav {
-        width: 350px !important;
+        width: 35% !important;
     }    
 }
 
-@media only screen and (min-width: 1280px) {
+/* @media only screen and (min-width: 1280px) {
     #EZDrawer > nav {
-        width: 400px !important;
+        width: 50% !important;
     }  
-}
+} */
